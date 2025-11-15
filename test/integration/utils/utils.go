@@ -32,7 +32,7 @@ func GetIntTestNamespace() (string, error) {
 	}
 	dir = filepath.Base(dir)
 	dir = strings.Map(func(r rune) rune {
-		if r < 'a' || r > 'z' && r != '-' {
+		if (r < 'a' || r > 'z') && r != '-' {
 			return '-'
 		}
 		return r
