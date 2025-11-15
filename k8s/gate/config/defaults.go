@@ -34,7 +34,7 @@ const (
 	DefaultCertFilesDirName       = "certlists"
 	DefaultMapsDirName            = "maps"
 	DefaultErrFilesDirName        = "errorfiles"
-	DefaultPattenrDirName         = "patterns"
+	DefaultPatternDirName         = "patterns"
 )
 
 func (cfg *Configuration) ApplyDefaults() {
@@ -91,6 +91,6 @@ func (cfg *Configuration) ApplyDefaults() {
 		cfg.HaproxyParams.HaproxyDirs.ErrFileDir = DefaultErrFilesDirName
 	}
 	if cfg.HaproxyParams.HaproxyDirs.PatternDir == "" {
-		cfg.HaproxyParams.HaproxyDirs.PatternDir = DefaultPattenrDirName
+		cfg.HaproxyParams.HaproxyDirs.PatternDir = DefaultPatternDirName
 	}
 }

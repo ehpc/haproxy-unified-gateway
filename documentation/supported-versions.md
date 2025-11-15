@@ -215,7 +215,7 @@ const (
 	GatewayClassConditionStatusAccepted GatewayClassConditionType = "Accepted"
 ```
 -------------------
-# Life cycke Gateway API
+# Life cycle Gateway API
 
 https://gateway-api.sigs.k8s.io/concepts/versioning/
 

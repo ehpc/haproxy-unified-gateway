@@ -351,7 +351,7 @@ func (b *HaproxyConfMgrImpl) mergeWithBackendCRs(backendRef gatewayv1.HTTPBacken
 			continue
 		}
 		// We only accept v3.Backend or MergeType
-		// Note that MergType is not a real CRD, it's only a way to configure how the merge behaves.
+		// Note that MergeType is not a real CRD, it's only a way to configure how the merge behaves.
 		// There is no:
 		// - Group: gate.v3.haproxy.org
 		// - Kind: MergeType CRDs

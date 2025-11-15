@@ -169,10 +169,10 @@ func (c *clientNative) BackendEdit(backend models.Backend) error {
 		return err
 	}
 
-	// Check if only Servers were udpated
+	// Check if only Servers were updated
 	onlyServersUpdated := false
 	if cmp.Equal(previousBackend, backend, cmpopts.IgnoreFields(models.Backend{}, "Servers")) {
-		c.logger.LogAttrs(context.Background(), slog.LevelInfo, "Only Servers are udpated",
+		c.logger.LogAttrs(context.Background(), slog.LevelInfo, "Only Servers are updated",
 			slog.String("backend", backend.Name),
 		)
 		onlyServersUpdated = true
@@ -212,7 +212,7 @@ func (c *clientNative) BackendEdit(backend models.Backend) error {
 				)
 			}
 		} else {
-			// We did not try runtime udpate (server create, for now is NOT done through runtime, it needs a realod)
+			// We did not try runtime update (server create, for now is NOT done through runtime, it needs a reload)
 			reload.Instance().SetReload("[onlyServersUpdated] [reload needed] - backend %s", backend.Name)
 		}
 	} else {

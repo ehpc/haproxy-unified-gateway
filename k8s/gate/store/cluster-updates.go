@@ -41,12 +41,12 @@ type Update[T client.Object] struct {
 	NewObject T
 	Status    Status
 	// Indirect is set to true when the update is not direct from a K8s object but
-	// from a linked K8s object udpate
+	// from a linked K8s object update
 	// For example a GatewayClass referencing a HugGate and the HugGate is updated
 	Indirect bool
 }
 
-// ClusterUpdated contains the udpates that happened to cluster objects during a sync cycle
+// ClusterUpdated contains the updates that happened to cluster objects during a sync cycle
 type ClusterUpdates struct {
 	GatewayClasses map[types.NamespacedName]Update[*gatewayv1.GatewayClass]
 	Gateways       map[types.NamespacedName]Update[*gatewayv1.Gateway]

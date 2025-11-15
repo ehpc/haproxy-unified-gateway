@@ -246,8 +246,8 @@ func (h *AppManagerImpl) processUpdate(updated structured.Structured) error {
 	var errors utils.Errors
 
 	// Frontends
-	for _, udpatedFE := range updated.Frontends {
-		if udpatedFE == nil {
+	for _, updatedFE := range updated.Frontends {
+		if updatedFE == nil {
 			// Should not happend
 			h.logger.LogAttrs(context.Background(), slog.LevelError, "nil frontend")
 			continue
@@ -255,7 +255,7 @@ func (h *AppManagerImpl) processUpdate(updated structured.Structured) error {
 		// TODO: need to check if only the Metadata has changed
 		// If so, no need to reload
 
-		err := h.client.FrontendEdit(*udpatedFE)
+		err := h.client.FrontendEdit(*updatedFE)
 		if err != nil {
 			h.logger.LogAttrs(context.Background(), slog.LevelError, "failed to edit frontend",
 				logging.LogAttrError(err),
@@ -266,8 +266,8 @@ func (h *AppManagerImpl) processUpdate(updated structured.Structured) error {
 	}
 
 	// Backends
-	for _, udpatedBE := range updated.Backends {
-		if udpatedBE == nil {
+	for _, updatedBE := range updated.Backends {
+		if updatedBE == nil {
 			// Should not happend
 			h.logger.LogAttrs(context.Background(), slog.LevelError, "nil backend")
 			continue
@@ -275,7 +275,7 @@ func (h *AppManagerImpl) processUpdate(updated structured.Structured) error {
 		// TODO: need to check if only the Metadata has changed
 		// If so, no need to reload
 
-		err := h.client.BackendEdit(*udpatedBE)
+		err := h.client.BackendEdit(*updatedBE)
 		if err != nil {
 			h.logger.LogAttrs(context.Background(), slog.LevelError, "failed to edit backend",
 				logging.LogAttrError(err),

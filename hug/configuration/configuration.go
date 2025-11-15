@@ -263,7 +263,7 @@ func (c *HUGConfig) Init(external External) error {
 	c.CertsDir = filepath.Join(c.HaproxyDirs.CfgDir, config.DefaultCertsDirName)
 	c.CertListDir = filepath.Join(c.HaproxyDirs.CfgDir, config.DefaultCertFilesDirName)
 	c.MapsDir = filepath.Join(c.HaproxyDirs.CfgDir, config.DefaultMapsDirName)
-	c.PatternDir = filepath.Join(c.HaproxyDirs.CfgDir, config.DefaultPattenrDirName)
+	c.PatternDir = filepath.Join(c.HaproxyDirs.CfgDir, config.DefaultPatternDirName)
 	c.ErrFileDir = filepath.Join(c.HaproxyDirs.CfgDir, config.DefaultErrFilesDirName)
 	for _, d := range []string{
 		c.CertsDir,

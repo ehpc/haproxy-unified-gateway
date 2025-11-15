@@ -40,7 +40,7 @@ func (b *HaproxyConfMgrImpl) processCertificates() error {
 func (b *HaproxyConfMgrImpl) runtimeCertificatesPrechecks() {
 	crtListUpdates := b.controllerStore.CrtListUpdates
 	// Crt-list can not be created or deleted through runtime
-	// So, if there are nay created or deleted crt-lists, we need to reload.
+	// So, if there are any created or deleted crt-lists, we need to reload.
 	// No further runtime update needed.
 	if len(crtListUpdates.Created) > 0 {
 		buffc := strings.Builder{}

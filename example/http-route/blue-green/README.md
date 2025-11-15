@@ -53,4 +53,4 @@ $ sh test.sh
 10 green
 ```
 
-Note that due to randomness, 9/1 ration might slightly differ
+Note that due to randomness, 9/1 ratio might slightly differ

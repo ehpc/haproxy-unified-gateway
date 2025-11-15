@@ -200,7 +200,7 @@ func (c *Configuration) upsertBackendWithServers(logger *slog.Logger, beName str
 	c.structured.Backends[be.Name] = be
 
 	// 2.2- If some servers were deleted, set the server to Maintenance through runtime
-	// TODO: we also need to check in HUG when we udpate the configuration that if BE differ only by deleted servers...
+	// TODO: we also need to check in HUG when we update the configuration that if BE differ only by deleted servers...
 	runtimeServerStateData := make([]RuntimeServerStateData, 0)
 	for serverName := range deletedServerNames {
 		runtimeServerStateData = append(runtimeServerStateData, RuntimeServerStateData{

@@ -172,7 +172,7 @@ func (test *IntTest) StartTestEnv(t *testing.T) { //revive:disable:function-leng
 		g.Expect(err).ToNot(gomega.HaveOccurred())
 		modifiedCfg = strings.ReplaceAll(modifiedCfg, "/var/run/haproxy/health.sock", path.Join(dir, "health.sock"))
 	}
-	err = writeInitalHaproxyCfg(hugConfig.HaproxyDirs.MainCfgFile, modifiedCfg)
+	err = writeInitialHaproxyCfg(hugConfig.HaproxyDirs.MainCfgFile, modifiedCfg)
 	g.Expect(err).ToNot(gomega.HaveOccurred())
 
 	// Setup Gate lib configuration from HUG binary configuration
@@ -352,8 +352,8 @@ func WriteKubeconfig(cfg *rest.Config) (string, error) {
 	return kubeconfigPath, nil
 }
 
-// writeInitalHaproxyCfg writes a string to a file at the specified path.
-func writeInitalHaproxyCfg(dstFile, content string) error {
+// writeInitialHaproxyCfg writes a string to a file at the specified path.
+func writeInitialHaproxyCfg(dstFile, content string) error {
 	// Use os.WriteFile which is a convenience function
 	// to write a byte slice to a file. It handles opening, writing, and closing.
 	// We convert the string to a byte slice.
